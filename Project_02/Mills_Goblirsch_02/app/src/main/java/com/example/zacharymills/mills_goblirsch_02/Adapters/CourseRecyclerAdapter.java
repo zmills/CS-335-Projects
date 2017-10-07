@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.zacharymills.mills_goblirsch_02.Model.Course;
@@ -54,6 +55,7 @@ public class CourseRecyclerAdapter extends RecyclerView.Adapter<CourseRecyclerAd
         holder.mCourseTitle.setText(course.getCourseTitle());
         holder.mCourseCode.setText(course.getCourseCode());
         holder.mCurrentPosition = position;
+        holder.mCourseImage.setImageResource(course.getCourseImageResource());
 
     }
 
@@ -72,6 +74,7 @@ public class CourseRecyclerAdapter extends RecyclerView.Adapter<CourseRecyclerAd
 
         public final TextView mCourseTitle;
         public final TextView mCourseCode;
+        private final ImageView mCourseImage;
         public int mCurrentPosition;
 
         /* Constructor                                                         */
@@ -80,8 +83,10 @@ public class CourseRecyclerAdapter extends RecyclerView.Adapter<CourseRecyclerAd
             super(itemView);
 
             /* Link the ui elements to their id's                              */
+
             mCourseTitle = (TextView) itemView.findViewById(R.id.course_title);
             mCourseCode = (TextView) itemView.findViewById(R.id.course_code);
+            mCourseImage = (ImageView) itemView.findViewById(R.id.course_image_view);
 
             /* Start a new activity when the item clicked                      */
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +95,7 @@ public class CourseRecyclerAdapter extends RecyclerView.Adapter<CourseRecyclerAd
                 {
                     Intent intent = new Intent(mContext, StudentListActivity.class);
                     intent.putExtra("CoursePosition", mCurrentPosition);
+                    //intent.putExtra("CourseTitle", mCourseTitle.toString());
                     mContext.startActivity(intent);
                 }
             });

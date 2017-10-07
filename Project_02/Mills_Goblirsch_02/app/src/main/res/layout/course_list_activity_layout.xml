@@ -8,13 +8,13 @@
     tools:context="com.example.zacharymills.mills_goblirsch_02.CourseListActivity">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        android:padding="5dp"/>
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/app_name"-->
+        <!--android:textSize="30dp"-->
+        <!--android:textAlignment="center"-->
+        <!--android:padding="5dp"/>-->
 
 
 

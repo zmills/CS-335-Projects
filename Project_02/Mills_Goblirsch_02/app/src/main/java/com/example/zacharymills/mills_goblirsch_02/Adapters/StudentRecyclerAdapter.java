@@ -52,8 +52,8 @@ public class StudentRecyclerAdapter extends RecyclerView.Adapter<StudentRecycler
     public void onBindViewHolder(StudentRecyclerAdapter.StudentViewHolder holder, int position)
     {
         mStudent = mStudents.get(position);
-        holder.mStudentName.setText(mStudent.getStudentName() + " - ");
-        holder.mStudentId.setText(mStudent.getStudentId());
+        holder.mStudentName.setText(mStudent.getStudentName());
+        holder.mStudentId.setText("ID: " + mStudent.getStudentId());
         holder.mStudentClassification.setText("Class: " + mStudent.getStudentClassification());
         holder.mStudentDormRoomNumber.setText("Dorm Room #: " + mStudent.getStudentRoomNumber());
         holder.mStudentIsWorkStudent.setText("Work Student: " + mStudent.getWorkStudent().toString());
@@ -76,7 +76,8 @@ public class StudentRecyclerAdapter extends RecyclerView.Adapter<StudentRecycler
     /***************************************************************************/
     /*                          Student view holder                            */
     /***************************************************************************/
-    public class StudentViewHolder extends RecyclerView.ViewHolder {
+    public class StudentViewHolder extends RecyclerView.ViewHolder
+    {
 
         public final TextView mStudentName;
         public final TextView mStudentId;
