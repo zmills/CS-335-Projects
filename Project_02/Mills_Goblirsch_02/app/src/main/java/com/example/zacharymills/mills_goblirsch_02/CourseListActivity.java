@@ -19,19 +19,13 @@ public class CourseListActivity extends AppCompatActivity
     private CourseDB mCourseDB = CourseDB.get();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.course_list_activity_layout);
 
         /* Initialize the content to be displayed                              */
         initializeDisplayContent();
-    }
-
-    @Override
-    protected void onResume()
-    {
-        super.onResume();
-        mCourseRecyclerAdapter.notifyDataSetChanged();
     }
 
     /***************************************************************************/
@@ -43,9 +37,30 @@ public class CourseListActivity extends AppCompatActivity
         final RecyclerView recyclerCourses = (RecyclerView) findViewById(R.id.list_courses);
         final LinearLayoutManager coursesLayoutManager = new LinearLayoutManager(this);
         recyclerCourses.setLayoutManager(coursesLayoutManager);
+        recyclerCourses.setNestedScrollingEnabled(false);
 
         /* Create the course adapter                                           */
         mCourseRecyclerAdapter = new CourseRecyclerAdapter(this, mCourseDB.getAllCourses());
         recyclerCourses.setAdapter(mCourseRecyclerAdapter);
+    }
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        mCourseRecyclerAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        mCourseRecyclerAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState)
+    {
+        super.onSaveInstanceState(outState);
     }
 }

@@ -54,9 +54,9 @@ public class CourseRecyclerAdapter extends RecyclerView.Adapter<CourseRecyclerAd
         Course course = mCourses.get(position);
         holder.mCourseTitle.setText(course.getCourseTitle());
         holder.mCourseCode.setText(course.getCourseCode());
+        holder.mStudentsEnrolled.setText("Students Enrolled: " + Integer.valueOf(course.getAllStudents().size()).toString());
         holder.mCurrentPosition = position;
         holder.mCourseImage.setImageResource(course.getCourseImageResource());
-
     }
 
     /***************************************************************************/
@@ -75,6 +75,7 @@ public class CourseRecyclerAdapter extends RecyclerView.Adapter<CourseRecyclerAd
         public final TextView mCourseTitle;
         public final TextView mCourseCode;
         private final ImageView mCourseImage;
+        public final TextView mStudentsEnrolled;
         public int mCurrentPosition;
 
         /* Constructor                                                         */
@@ -87,6 +88,7 @@ public class CourseRecyclerAdapter extends RecyclerView.Adapter<CourseRecyclerAd
             mCourseTitle = (TextView) itemView.findViewById(R.id.course_title);
             mCourseCode = (TextView) itemView.findViewById(R.id.course_code);
             mCourseImage = (ImageView) itemView.findViewById(R.id.course_image_view);
+            mStudentsEnrolled = (TextView) itemView.findViewById(R.id.students_enrolled);
 
             /* Start a new activity when the item clicked                      */
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -95,7 +97,6 @@ public class CourseRecyclerAdapter extends RecyclerView.Adapter<CourseRecyclerAd
                 {
                     Intent intent = new Intent(mContext, StudentListActivity.class);
                     intent.putExtra("CoursePosition", mCurrentPosition);
-                    //intent.putExtra("CourseTitle", mCourseTitle.toString());
                     mContext.startActivity(intent);
                 }
             });

@@ -102,45 +102,54 @@ public class StudentRecyclerAdapter extends RecyclerView.Adapter<StudentRecycler
             mIsTardy = (RadioButton) itemView.findViewById(R.id.student_is_tardy);
             mIsAbsent = (RadioButton) itemView.findViewById(R.id.student_is_absent);
 
+            /* Set student's attendance status to present                      */
             mIsPresent.setOnClickListener(new View.OnClickListener() {
 
                 public void onClick(View v)
                 {
+                    /* Set Student's attendance status                         */
                     mStudent = mStudents.get(getLayoutPosition());
                     mStudent.getAttendanceStatus().setPresent(true);
                     mStudent.getAttendanceStatus().setTardy(false);
                     mStudent.getAttendanceStatus().setAbsent(false);
 
+                    /* Set Student's attendance status radio buttons           */
                     mIsPresent.setChecked(mStudent.getAttendanceStatus().isPresent());
                     mIsTardy.setChecked(mStudent.getAttendanceStatus().isTardy());
                     mIsAbsent.setChecked(mStudent.getAttendanceStatus().isAbsent());
                 }
             });
 
+            /* Set student's attendance status to Tardy                        */
             mIsTardy.setOnClickListener(new View.OnClickListener() {
 
                 public void onClick(View v)
                 {
+                    /* Set Student's attendance status                         */
                     mStudent = mStudents.get(getLayoutPosition());
                     mStudent.getAttendanceStatus().setPresent(false);
                     mStudent.getAttendanceStatus().setTardy(true);
                     mStudent.getAttendanceStatus().setAbsent(false);
 
+                    /* Set Student's attendance status radio buttons           */
                     mIsPresent.setChecked(mStudent.getAttendanceStatus().isPresent());
                     mIsTardy.setChecked(mStudent.getAttendanceStatus().isTardy());
                     mIsAbsent.setChecked(mStudent.getAttendanceStatus().isAbsent());
                 }
             });
 
+            /* Set student's attendance status to Absent                       */
             mIsAbsent.setOnClickListener(new View.OnClickListener() {
 
                 public void onClick(View v)
                 {
+                    /* Set Student's attendance status                         */
                     mStudent = mStudents.get(getLayoutPosition());
                     mStudent.getAttendanceStatus().setPresent(false);
                     mStudent.getAttendanceStatus().setTardy(false);
                     mStudent.getAttendanceStatus().setAbsent(true);
 
+                    /* Set Student's attendance status radio buttons           */
                     mIsPresent.setChecked(mStudent.getAttendanceStatus().isPresent());
                     mIsTardy.setChecked(mStudent.getAttendanceStatus().isTardy());
                     mIsAbsent.setChecked(mStudent.getAttendanceStatus().isAbsent());

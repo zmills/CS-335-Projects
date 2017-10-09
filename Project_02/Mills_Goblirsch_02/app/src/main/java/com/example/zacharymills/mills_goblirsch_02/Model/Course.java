@@ -37,16 +37,11 @@ public class Course {
     /***************************************************************************/
     private void GenerateStudents() {
 
-        ListOfStudents.add(new Student("124488", "Zach Mills", "Senior", "6221", false));
+        ListOfStudents.add(new Student("124488", "Zach Mills", "Senior", "6421", false));
         ListOfStudents.add(new Student("124411", "Peter Parker", "Freshman", "6421", true));
         ListOfStudents.add(new Student("124788", "Fabrice Francois", "Senior", "6421", false));
         ListOfStudents.add(new Student("124688", "Marcelino Augello", "Junior", "6821", false));
-        ListOfStudents.add(new Student("125488", "Nick Baltodano", "Senior", "1221", true));
-        ListOfStudents.add(new Student("125433", "Bruce banner", "Senior", "1211", true));
-        ListOfStudents.add(new Student("122488", "Bruce Wayne", "Junior", "1421", false));
-        ListOfStudents.add(new Student("125488", "Wade Wilson", "Senior", "1411", false));
-        ListOfStudents.add(new Student("125188", "Tim Drake", "Freshman", "1281", true));
-        ListOfStudents.add(new Student("123488", "Jason Todd", "Senior", "1231", true));
+        ListOfStudents.add(new Student("127321", "Nick Goblirsch", "Junior", "2452", true));
         Collections.shuffle(ListOfStudents);
     }
 

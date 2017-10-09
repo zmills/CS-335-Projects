@@ -8,19 +8,32 @@
     tools:context="com.example.zacharymills.mills_goblirsch_02.CourseListActivity">
 
 
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/app_name"-->
-        <!--android:textSize="30dp"-->
-        <!--android:textAlignment="center"-->
-        <!--android:padding="5dp"/>-->
-
-
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/list_courses"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/item_course_list" />
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:padding="5dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_courses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_course_list"/>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
 </LinearLayout>
