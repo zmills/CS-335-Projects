@@ -5,6 +5,7 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by Zachary Mills on 9/30/2017.
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class Course {
 
-    private int courseId;
+    private UUID courseId;
     private String courseTitle;
     private String courseCode;
     private List<Student> ListOfStudents = new ArrayList<>();
@@ -21,9 +22,9 @@ public class Course {
     /***************************************************************************/
     /*                               Constructor                               */
     /***************************************************************************/
-    public Course(int courseId, String courseTitle, String courseCode, int courseImageResource)
+    public Course(String courseTitle, String courseCode, int courseImageResource)
     {
-        this.courseId = courseId;
+        courseId = UUID.randomUUID();
         this.courseTitle = courseTitle;
         this.courseCode = courseCode;
         this.courseImageResource = courseImageResource;
@@ -46,7 +47,7 @@ public class Course {
     }
 
     /* Getters                                                                 */
-    public int getCourseId() { return courseId; }
+    public UUID getCourseId() { return courseId; }
     public String getCourseTitle() {
         return courseTitle;
     }
